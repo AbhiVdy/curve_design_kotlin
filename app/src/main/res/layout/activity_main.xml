@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgcolor"
+    tools:context=".views.activity.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/llChooser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_30dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/cvChart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvDay"
+                style="@style/headerTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/day" />
+
+            <View
+                android:id="@+id/bulletDay"
+                android:layout_width="5dp"
+                android:layout_height="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bullets_layout"
+                android:backgroundTint="@color/ivory" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvWeek"
+                style="@style/headerTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/week" />
+
+            <View
+                android:id="@+id/bulletWeek"
+                android:layout_width="5dp"
+                android:layout_height="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bullets_layout"
+                android:backgroundTint="@color/ivory" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvMonth"
+                style="@style/headerTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/month" />
+
+            <View
+                android:id="@+id/bulletMonth"
+                android:layout_width="5dp"
+                android:layout_height="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bullets_layout"
+                android:backgroundTint="@color/ivory" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvChart"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginStart="@dimen/margin_20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="@dimen/margin_20dp"
+        android:elevation="12dp"
+        app:cardBackgroundColor="@color/cardcolor"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llChooser">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.core.arcassignment.views.components.ArcView
+                android:id="@+id/viewArc"
+                android:layout_width="match_parent"
+                android:layout_height="400dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="@dimen/margin_20dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="@dimen/margin_20dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/bullets_layout"
+                        android:backgroundTint="@color/cyanShade" />
+
+                    <TextView
+                        style="@style/bulletsTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="archived" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/bullets_layout"
+                        android:backgroundTint="@color/gold" />
+
+                    <TextView
+                        style="@style/bulletsTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="inprogress" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/bullets_layout"
+                        android:backgroundTint="@color/orange" />
+
+                    <TextView
+                        style="@style/bulletsTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="pending" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Archive History"
+                android:layout_gravity="center"
+                android:textColor="@color/cyanShade"
+                android:textSize="14sp"
+                app:drawableEndCompat="@drawable/ic_arrow_right"
+                android:drawableTint="@color/cyanShade"/>
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
